@@ -1,0 +1,10 @@
+@use "mixin";
+@use "reset";
+
+.heroContainer {
+  height: 40%;
+  width: 100%;
+  border: 1px solid;
+
+  @include mixin.center;
+}

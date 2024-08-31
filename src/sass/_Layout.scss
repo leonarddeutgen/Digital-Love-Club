@@ -1,0 +1,11 @@
+@use "mixin";
+@use "reset";
+
+.appContainer {
+  height: 100vh;
+  border: 1px solid;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

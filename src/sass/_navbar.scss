@@ -1,0 +1,55 @@
+@use "mixin";
+@use "reset";
+
+.navBarContainer {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  border-bottom: 1px solid;
+
+  &--btn {
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+
+    &:hover + .menu {
+      right: 0;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 100px;
+  height: 10rem;
+  background-color: #f4f4f4;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.5s ease;
+  border-bottom-left-radius: 20px;
+
+  &--list {
+    padding: 2rem;
+    list-style: none;
+    cursor: pointer;
+
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.navBarContainer:hover .menu {
+  right: 0; // Show the menu when hovering over the DLC button
+}
+
+.menu:hover {
+  right: 0; // Keep the menu open when hovering over the menu itself
+}
+
+.navBarContainer--btn:hover + .menu,
+.menu:hover {
+  right: 0; // Show the menu when hovering over either the button or the menu
+}
