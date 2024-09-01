@@ -1,0 +1,42 @@
+@use "mixin";
+@use "reset";
+
+.profilePage {
+  //height: 100vh;
+  width: 100%;
+
+  &--title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.videoContainer {
+  height: 70%;
+  width: 100%;
+  //border: 1px solid;
+
+  @include mixin.center;
+
+  &--video {
+    width: 100%;
+    height: 450px;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videoContainer--video {
+    width: 80%;
+    height: 300px;
+  }
+}
+
+.infoContainer {
+  width: 100%;
+  //border: 1px solid;
+  gap: 1rem;
+  padding: 1rem;
+  @include mixin.center;
+}

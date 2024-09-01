@@ -7,3 +7,15 @@
   gap: 5rem;
   padding: 1rem;
 }
+
+@media (max-width: 1400px) {
+  .CardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .CardsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
