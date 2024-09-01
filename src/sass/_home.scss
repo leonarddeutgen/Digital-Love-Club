@@ -1,2 +1,9 @@
 @use "mixin";
 @use "reset";
+
+.CardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  padding: 1rem;
+}

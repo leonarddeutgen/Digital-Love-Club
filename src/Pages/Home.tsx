@@ -4,8 +4,12 @@ import { Cards } from "../components/videoCards/Cards";
 export const Home = () => {
   return (
     <>
-      <Hero></Hero>
-      <Cards></Cards>
+      <article className="heroContainer">
+        <Hero></Hero>
+      </article>
+      <section className="CardsContainer">
+        <Cards></Cards>
+      </section>
     </>
   );
 };
