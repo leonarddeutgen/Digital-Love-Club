@@ -17,6 +17,7 @@ function App() {
     };
     getVideoApi();
   }, []);
+  console.log(videos.videos);
 
   return (
     <>

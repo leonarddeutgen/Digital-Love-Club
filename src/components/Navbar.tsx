@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 
@@ -7,7 +6,6 @@ interface NavigationProps {
 }
 
 export const Navbar = ({ toggleTheme }: NavigationProps) => {
-  const navigate = useNavigate();
   return (
     <>
       <section className="navBarContainer">
@@ -19,14 +17,6 @@ export const Navbar = ({ toggleTheme }: NavigationProps) => {
             Dark Mode
           </Dropdown.Item>
         </DropdownButton>
-
-        {/* <div className="menu">
-          <ul className="menu--list">
-            <li>Home</li>
-            <li>Playlists</li>
-            <li>Contact</li>
-          </ul>
-        </div> */}
       </section>
     </>
   );

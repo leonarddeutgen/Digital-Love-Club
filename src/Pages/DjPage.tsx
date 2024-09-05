@@ -23,6 +23,8 @@ export const DjPage = () => {
         <section className="infoContainer">
           <ProfileInformation selectedDj={selectedDj}></ProfileInformation>
         </section>
+
+        <section></section>
       </article>
     </>
   );
