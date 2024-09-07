@@ -17,6 +17,7 @@ export const Layout = () => {
           className="appContainer"
           style={{
             backgroundColor: theme.background,
+            color: theme.color,
           }}
         >
           <Navbar toggleTheme={toogleTheme}></Navbar>

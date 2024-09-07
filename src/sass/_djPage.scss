@@ -4,6 +4,7 @@
 .profilePage {
   //height: 100vh;
   width: 100%;
+  gap: 1rem;
 
   &--title {
     display: flex;
@@ -15,8 +16,7 @@
 .videoContainer {
   height: 70%;
   width: 100%;
-  //border: 1px solid;
-
+  gap: 1rem; //border: 1px solid;
   @include mixin.center;
 
   &--video {
