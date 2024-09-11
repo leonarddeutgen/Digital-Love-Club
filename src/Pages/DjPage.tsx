@@ -3,7 +3,7 @@ import { VideoContext } from "../context/VideoContext";
 import { useParams } from "react-router-dom";
 import { ProfileInformation } from "../components/videoCards/ProfileInformation";
 import { VideoPresentation } from "../components/videoCards/VideoPresentation";
-import { ListPresentation } from "../components/videoCards/listPresentation";
+import { ListPresentation } from "../components/videoCards/ListPresentation";
 
 export const DjPage = () => {
   const { id } = useParams();
