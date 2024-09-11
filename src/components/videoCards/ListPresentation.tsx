@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { VideoContext } from "../../context/VideoContext";
-import Card from "react-bootstrap/Card";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-export const Cards = () => {
+export const ListPresentation = () => {
   const { videos } = useContext(VideoContext);
   const navigate = useNavigate();
 

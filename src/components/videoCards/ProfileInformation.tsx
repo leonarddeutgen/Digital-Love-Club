@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import { ISnippet } from "../../models/ISnippet";
 import Accordion from "react-bootstrap/Accordion";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface InformationProps {
   selectedDj: ISnippet | undefined;
 }
 
 export const ProfileInformation = ({ selectedDj }: InformationProps) => {
+  const theme = useContext(ThemeContext);
   return (
     <>
       <Accordion defaultActiveKey="0">
@@ -13,7 +16,14 @@ export const ProfileInformation = ({ selectedDj }: InformationProps) => {
           <Accordion.Header>{`More info about ${selectedDj?.snippet.title
             .split("|")[0]
             .trim()}`}</Accordion.Header>
-          <Accordion.Body>{selectedDj?.snippet.description}</Accordion.Body>
+          <Accordion.Body
+            style={{
+              backgroundColor: theme.background,
+              color: theme.color,
+            }}
+          >
+            {selectedDj?.snippet.description}
+          </Accordion.Body>
         </Accordion.Item>
       </Accordion>
     </>

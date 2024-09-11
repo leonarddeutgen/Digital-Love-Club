@@ -3,6 +3,7 @@ import { VideoContext } from "../context/VideoContext";
 import { useParams } from "react-router-dom";
 import { ProfileInformation } from "../components/videoCards/ProfileInformation";
 import { VideoPresentation } from "../components/videoCards/VideoPresentation";
+import { ListPresentation } from "../components/videoCards/listPresentation";
 
 export const DjPage = () => {
   const { id } = useParams();
@@ -23,8 +24,9 @@ export const DjPage = () => {
         <section className="infoContainer">
           <ProfileInformation selectedDj={selectedDj}></ProfileInformation>
         </section>
-
-        <section></section>
+        <section className="listPresentation">
+          <ListPresentation></ListPresentation>
+        </section>
       </article>
     </>
   );

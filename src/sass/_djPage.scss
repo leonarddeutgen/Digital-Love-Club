@@ -1,6 +1,11 @@
 @use "mixin";
 @use "reset";
 
+html,
+body {
+  overflow-x: hidden; /* Förhindra horisontell scrollning */
+}
+
 .profilePage {
   //height: 100vh;
   width: 100%;
@@ -39,4 +44,27 @@
   gap: 1rem;
   padding: 1rem;
   @include mixin.center;
+}
+
+.listPresentation {
+  display: flex;
+  overflow: hidden;
+  animation: scroll 60s linear infinite;
+  gap: 5rem;
+  width: 100%; /* Begränsar bredden till 100% av föräldern */
+  position: relative;
+}
+
+.CardsContainer--card {
+  width: 18rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%); /* Börja från utanför skärmen till höger */
+  }
+  100% {
+    transform: translateX(-100%); /* Sluta utanför skärmen till vänster */
+  }
 }
