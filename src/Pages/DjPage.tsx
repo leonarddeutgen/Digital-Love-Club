@@ -24,10 +24,11 @@ export const DjPage = () => {
         <section className="infoContainer">
           <ProfileInformation selectedDj={selectedDj}></ProfileInformation>
         </section>
-        <section className="listPresentation">
-          <ListPresentation></ListPresentation>
-        </section>
       </article>
+
+      <section className="listPresentation">
+        <ListPresentation></ListPresentation>
+      </section>
     </>
   );
 };

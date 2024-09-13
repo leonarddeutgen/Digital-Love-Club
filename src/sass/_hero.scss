@@ -5,6 +5,7 @@
   height: 20rem;
   width: 100%;
   border: 1px solid;
+  border-radius: 10px;
 
   @include mixin.center;
 }
@@ -15,4 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    @include mixin.center(none);
+    border: none;
+  }
 }

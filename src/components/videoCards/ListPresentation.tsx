@@ -1,35 +1,46 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { VideoContext } from "../../context/VideoContext";
-import { Card } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export const ListPresentation = () => {
   const { videos } = useContext(VideoContext);
   const navigate = useNavigate();
 
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex: number) => {
+    setIndex(selectedIndex);
+  };
+
+  const handleClick = (videoID: string) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(`/djPage/${videoID}`);
+  };
+
   return (
     <>
-      {videos.map((video) => {
-        return (
-          <Card
-            className="CardsContainer--card"
-            style={{ width: "18rem" }}
-            key={video.snippet.resourceId.videoId}
-            onClick={() =>
-              navigate(`/djPage/${video.snippet.resourceId.videoId}`)
-            }
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        className="carousel"
+      >
+        {videos.map((video, i) => (
+          <Carousel.Item
+            key={i}
+            className="carousel--item"
+            onClick={() => handleClick(video.snippet.resourceId.videoId)}
           >
-            <Card.Img variant="top" src={video.snippet.thumbnails.high.url} />
-            <Card.Body>
-              <Card.Title>{video.snippet.title}</Card.Title>
-              <Card.Text>
-                {video.snippet.description.substring(0, 40)}...
-              </Card.Text>
-              {/* <Button variant="primary">Check it out</Button> */}
-            </Card.Body>
-          </Card>
-        );
-      })}
+            <div className="imgContainer">
+              <img src={video.snippet.thumbnails.high.url} alt="" />
+            </div>
+
+            <Carousel.Caption>
+              <h3>{video.snippet.title}</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </>
   );
 };

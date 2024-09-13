@@ -11,7 +11,7 @@ export const ProfileInformation = ({ selectedDj }: InformationProps) => {
   const theme = useContext(ThemeContext);
   return (
     <>
-      <Accordion defaultActiveKey="0">
+      <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>{`More info about ${selectedDj?.snippet.title
             .split("|")[0]
